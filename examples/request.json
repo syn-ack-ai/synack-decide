@@ -1,0 +1,8 @@
+{
+  "state": {"ticket": "I was charged twice for my October order and nobody answers my emails.", "customer_tier": "gold"},
+  "questions": {
+    "team": {"type": "choice", "instructions": "Which team should handle this ticket?",
+             "criteria": {"billing": "Payments, refunds, invoices", "shipping": "Delivery and tracking", "technical": "Bugs and account access"}},
+    "urgent": {"type": "noul", "instructions": "Is the customer upset enough to need a same-day reply?"}
+  }
+}
