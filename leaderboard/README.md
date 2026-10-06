@@ -21,7 +21,9 @@ PYTHONPATH=v2 python -m decision_index pipeline --engine engine_v2:V2Engine \
 - **Questions in one request:** they are batched in one padded forward pass under a 32,768-token budget, and their
   shared prompt prefix is computed once (`prefix_reuse`, default on).
 - **No truncation, no option filtering:** questions with more than 255 options, or prompts over 32,768 tokens,
-  raise `Unsupported`. In the run, only rows outside the 0.2.1 edition hit this (167 of the 442 excluded rows).
+  raise `Unsupported`. In the run, only rows outside the 0.2.1 edition hit this: 167 of the 442 excluded rows, all ToolRet
+  retrieval prompts of 34,000 to 38,444 tokens (never scored). Raising the limit with `--option max_tokens=40960` should
+  cover them (not run).
 - **Latency:** per-request device-synchronized wall time. The median was 132 ms in the run.
 - **Other paths:** `engine_cuda.py` and `serve.py` at the repo root use the same prompt and readout.
   `serve.py --backend cuda` serves `POST /v1/systemone` for the kit's `http` engine.
