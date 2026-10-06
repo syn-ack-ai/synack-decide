@@ -58,6 +58,7 @@ PYTHONPATH=. python -m decision_index run --engine engine_mlx:MLXEngine --model 
 | `engine_mlx.py` | MLX engine (`load_mlx`, `label_probs`, `MLXEngine`) |
 | `engine_cuda.py` | transformers engine; batches multi-question requests (`CudaEngine`) |
 | `serve.py` | `/v1/systemone` server and one-off CLI |
+| `leaderboard/` | the exact engine and prompt code of the Decision Index 0.2.1 run (`engine_v2:V2Engine`) |
 | `gguf/systemone.jinja` | llama.cpp decision template (type `nimble`) that reproduces `common.py` byte for byte |
 | `gguf/add_metadata.py` | adds the decision type and template to a converted GGUF |
 
